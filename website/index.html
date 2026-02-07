@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Private Garden in the Heart of Porto | T2 Apartment, Cedofeita</title>
+  <meta name="description" content="T2 apartment with private garden in Cedofeita, Porto. 2 bedrooms, ~80-100 m2 interior, ~50 m2 garden. Rebuilt 2025. Private sale — no agent, no commission.">
+  <style>
+    /* ── Reset & Base ── */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: #2c2c2c;
+      background: #faf8f5;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Color Palette ──
+       Olive green:   #4a5d3a  (primary)
+       Dark olive:    #3a4a2e  (headings)
+       Terracotta:    #c4704b  (accents)
+       Warm white:    #faf8f5  (background)
+       Cream:         #f3efe8  (alt sections)
+       Sand:          #e8e0d4  (borders/lines)
+       Charcoal:      #2c2c2c  (body text)
+       Soft gray:     #6b6b6b  (secondary text)
+    */
+
+    /* ── Typography ── */
+    h1, h2, h3, h4 {
+      color: #3a4a2e;
+      line-height: 1.3;
+      font-weight: 700;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      letter-spacing: -0.02em;
+    }
+
+    h2 {
+      font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+      margin-bottom: 1rem;
+    }
+
+    h3 {
+      font-size: 1.15rem;
+      color: #4a5d3a;
+      margin-bottom: 0.75rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+      max-width: 680px;
+    }
+
+    a {
+      color: #c4704b;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+
+    a:hover {
+      border-bottom-color: #c4704b;
+    }
+
+    strong {
+      color: #3a4a2e;
+      font-weight: 600;
+    }
+
+    /* ── Layout ── */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    section {
+      padding: 4rem 0;
+    }
+
+    section.alt {
+      background: #f3efe8;
+    }
+
+    .divider {
+      width: 60px;
+      height: 3px;
+      background: #c4704b;
+      border: none;
+      margin: 0 0 2rem 0;
+      border-radius: 2px;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      position: relative;
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: #3a4a2e;
+      overflow: hidden;
+    }
+
+    .hero-image-placeholder {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #4a5d3a 0%, #3a4a2e 40%, #2e3d24 100%);
+      z-index: 0;
+    }
+
+    .hero-image-placeholder .placeholder-label {
+      color: rgba(255,255,255,0.25);
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      position: absolute;
+      bottom: 1.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      white-space: nowrap;
+    }
+
+    /* When a real hero image is added, use this class */
+    .hero-image {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(42, 55, 33, 0.55);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      color: #fff;
+      padding: 2rem 1.5rem;
+    }
+
+    .hero-content h1 {
+      color: #fff;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1rem, 2.5vw, 1.3rem);
+      color: rgba(255,255,255,0.85);
+      margin-bottom: 2rem;
+      font-weight: 400;
+    }
+
+    .hero-tagline {
+      font-size: clamp(1rem, 2vw, 1.15rem);
+      color: rgba(255,255,255,0.75);
+      font-style: italic;
+      max-width: 550px;
+      margin: 0 auto;
+      line-height: 1.8;
+    }
+
+    /* ── Image Placeholders ── */
+    .image-grid {
+      display: grid;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .image-grid.three {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .image-grid.four {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .image-placeholder {
+      aspect-ratio: 4/3;
+      background: #e8e0d4;
+      border: 2px dashed #c9bfb0;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #9a8e7f;
+      font-size: 0.85rem;
+      text-align: center;
+      padding: 1rem;
+      transition: background 0.2s;
+    }
+
+    .image-placeholder .placeholder-icon {
+      font-size: 1.8rem;
+      margin-bottom: 0.5rem;
+      opacity: 0.5;
+    }
+
+    .image-placeholder .placeholder-text {
+      font-size: 0.75rem;
+      opacity: 0.7;
+    }
+
+    /* When real images are added */
+    .image-grid img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    @media (max-width: 600px) {
+      .image-grid.three,
+      .image-grid.four {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (min-width: 601px) and (max-width: 900px) {
+      .image-grid.three {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* ── Blockquote ── */
+    blockquote {
+      border-left: 3px solid #c4704b;
+      padding: 1rem 1.5rem;
+      margin: 2rem 0;
+      background: rgba(196, 112, 75, 0.06);
+      border-radius: 0 6px 6px 0;
+      font-style: italic;
+      color: #4a4a4a;
+      max-width: 680px;
+    }
+
+    /* ── Tables ── */
+    .specs-table {
+      width: 100%;
+      max-width: 600px;
+      border-collapse: collapse;
+      margin-top: 1.5rem;
+    }
+
+    .specs-table tr {
+      border-bottom: 1px solid #e8e0d4;
+    }
+
+    .specs-table tr:last-child {
+      border-bottom: none;
+    }
+
+    .specs-table td {
+      padding: 0.75rem 0;
+      vertical-align: top;
+    }
+
+    .specs-table td:first-child {
+      font-weight: 600;
+      color: #3a4a2e;
+      width: 45%;
+      padding-right: 1rem;
+    }
+
+    .specs-table td:last-child {
+      color: #4a4a4a;
+    }
+
+    .walking-table {
+      width: 100%;
+      max-width: 600px;
+      border-collapse: collapse;
+      margin-top: 1.5rem;
+    }
+
+    .walking-table tr {
+      border-bottom: 1px solid #e8e0d4;
+    }
+
+    .walking-table tr:last-child {
+      border-bottom: none;
+    }
+
+    .walking-table td {
+      padding: 0.6rem 0;
+    }
+
+    .walking-table td:first-child {
+      color: #2c2c2c;
+      padding-right: 2rem;
+    }
+
+    .walking-table td:last-child {
+      color: #6b6b6b;
+      white-space: nowrap;
+      text-align: right;
+    }
+
+    /* ── Differentiators List ── */
+    .diff-list {
+      list-style: none;
+      padding: 0;
+      max-width: 680px;
+    }
+
+    .diff-list li {
+      padding: 0.75rem 0 0.75rem 1.75rem;
+      position: relative;
+      border-bottom: 1px solid #e8e0d4;
+    }
+
+    .diff-list li:last-child {
+      border-bottom: none;
+    }
+
+    .diff-list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 1.1rem;
+      width: 8px;
+      height: 8px;
+      background: #c4704b;
+      border-radius: 50%;
+    }
+
+    /* ── Private Sale ── */
+    .sale-benefits {
+      list-style: none;
+      padding: 0;
+      max-width: 680px;
+    }
+
+    .sale-benefits li {
+      padding: 0.5rem 0 0.5rem 1.75rem;
+      position: relative;
+    }
+
+    .sale-benefits li::before {
+      content: "\2713";
+      position: absolute;
+      left: 0;
+      color: #4a5d3a;
+      font-weight: 700;
+    }
+
+    /* ── Contact ── */
+    .contact-section {
+      background: #3a4a2e;
+      color: #fff;
+      text-align: center;
+      padding: 5rem 1.5rem;
+    }
+
+    .contact-section h2 {
+      color: #fff;
+    }
+
+    .contact-section .divider {
+      margin: 0 auto 2rem auto;
+    }
+
+    .contact-section p {
+      color: rgba(255,255,255,0.8);
+      margin: 0 auto 1rem auto;
+    }
+
+    .contact-name {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 0.5rem;
+    }
+
+    .contact-email a {
+      color: #e8c4a8;
+      font-size: 1.1rem;
+      border-bottom: 1px solid rgba(232,196,168,0.4);
+    }
+
+    .contact-email a:hover {
+      border-bottom-color: #e8c4a8;
+    }
+
+    .contact-note {
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: rgba(255,255,255,0.6);
+    }
+
+    /* ── Footer ── */
+    footer {
+      background: #2e3d24;
+      color: rgba(255,255,255,0.4);
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.8rem;
+    }
+
+    /* ── Utilities ── */
+    .text-center {
+      text-align: center;
+    }
+
+    .mt-1 { margin-top: 1rem; }
+    .mt-2 { margin-top: 2rem; }
+    .mb-2 { margin-bottom: 2rem; }
+
+    /* ── Print Styles ── */
+    @media print {
+      .hero { min-height: auto; padding: 3rem 0; }
+      section { padding: 2rem 0; }
+      .image-placeholder { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════
+       HERO SECTION
+       To add a hero image:
+       1. Place your photo in the images/ folder (e.g. images/garden-hero.jpg)
+       2. Inside .hero, replace the <div class="hero-image-placeholder">
+          with: <img class="hero-image" src="images/garden-hero.jpg" alt="Private garden with lemon tree in Porto apartment">
+       3. Keep the .hero-overlay div for text readability
+       ═══════════════════════════════════════════════ -->
+
+  <section class="hero">
+    <div class="hero-image-placeholder">
+      <span class="placeholder-label">Hero photo: garden wide shot, golden-hour light</span>
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>A Private Garden in the Heart of Porto</h1>
+      <p class="hero-subtitle">T2 Apartment with Garden &nbsp;|&nbsp; Rua do Breiner, Cedofeita</p>
+      <p class="hero-tagline">
+        A lemon tree, a hammock, a grapevine — and the city at your doorstep.<br>
+        This is not a typical Porto apartment.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════
+       THE GARDEN
+       ═══════════════════════════════════════════════ -->
+
+  <section id="garden">
+    <div class="container">
+      <h2>The Garden</h2>
+      <hr class="divider">
+
+      <p>What makes this apartment truly special is something almost impossible to find in downtown Porto: a <strong>private garden</strong>.</p>
+
+      <p>Step outside into ~50 m2 of your own green space — a mix of planted garden and patio, surrounded by walls that make it feel like a world apart from the city.</p>
+
+      <p>At the centre stands a <strong>large lemon tree</strong>, with a <strong>grapevine</strong> climbing nearby and <strong>colourful flowers</strong> throughout. In the back, tucked away in the most private corner, there's a spot for a <strong>hammock</strong> — your personal retreat, hidden from everything.</p>
+
+      <p>This is where you'll have morning coffee. This is where you'll host friends for dinner under the stars. This is where Porto feels like home.</p>
+
+      <blockquote>One of the very few apartments in central Porto with a genuine private garden.</blockquote>
+
+      <!-- Garden photos: replace placeholders with real images
+           Example: <img src="images/garden-lemon-tree.jpg" alt="Lemon tree in private garden"> -->
+      <div class="image-grid three">
+        <div class="image-placeholder">
+          <span class="placeholder-icon">&#127795;</span>
+          Lemon tree &amp; hammock
+          <span class="placeholder-text">images/garden-01.jpg</span>
+        </div>
+        <div class="image-placeholder">
+          <span class="placeholder-icon">&#127807;</span>
+          Garden wide shot
+          <span class="placeholder-text">images/garden-02.jpg</span>
+        </div>
+        <div class="image-placeholder">
+          <span class="placeholder-icon">&#127769;</span>
+          Evening patio dining
+          <span class="placeholder-text">images/garden-03.jpg</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════
+       THE APARTMENT
+       ═══════════════════════════════════════════════ -->
+
+  <section id="apartment" class="alt">
+    <div class="container">
+      <h2>The Apartment</h2>
+      <hr class="divider">
+
+      <p>A <strong>2-bedroom apartment</strong> on the 1st floor of an independent building on Rua do Breiner, in the heart of Cedofeita.</p>
+
+      <p>The building dates from before 1951 but was <strong>completely rebuilt in 2025</strong> — which means the charm and character of the original structure are preserved, while the bones of the building (structure, plumbing, electrics) are brand new.</p>
+
+      <p>Inside, the apartment has a <strong>vintage warmth</strong> that feels authentic and inviting, not sterile. Original details — think high ceilings, wood floors, Portuguese tilework — sit alongside a <strong>modern open-plan kitchen</strong> that connects to the living and dining area.</p>
+
+      <p>Natural light fills the space throughout the day.</p>
+
+      <h3>What's Inside</h3>
+
+      <table class="specs-table">
+        <tr><td>Bedrooms</td><td>2</td></tr>
+        <tr><td>Bathroom</td><td>1</td></tr>
+        <tr><td>Interior area</td><td>~80-100 m2</td></tr>
+        <tr><td>Garden</td><td>~40-60 m2 (private, enclosed)</td></tr>
+        <tr><td>Kitchen</td><td>Modern, renovated, open-plan</td></tr>
+        <tr><td>Layout</td><td>Open living/dining connected to kitchen</td></tr>
+        <tr><td>Light</td><td>Bright, good natural light throughout</td></tr>
+        <tr><td>Character</td><td>High ceilings, wood floors, vintage details</td></tr>
+        <tr><td>Building</td><td>Independent (no condominium fees)</td></tr>
+        <tr><td>Rebuilt</td><td>2025 (new structure, plumbing, electrics)</td></tr>
+        <tr><td>Floor</td><td>1st floor</td></tr>
+      </table>
+
+      <!-- Apartment photos: replace placeholders with real images -->
+      <div class="image-grid four">
+        <div class="image-placeholder">
+          <span class="placeholder-icon">&#9728;&#65039;</span>
+          Living room
+          <span class="placeholder-text">images/apartment-01.jpg</span>
+        </div>
+        <div class="image-placeholder">
+          <span class="placeholder-icon">&#127859;</span>
+          Kitchen
+          <span class="placeholder-text">images/apartment-02.jpg</span>
+        </div>
+        <div class="image-placeholder">
+          <span class="placeholder-icon">&#128716;</span>
+          Bedroom
+          <span class="placeholder-text">images/apartment-03.jpg</span>
+        </div>
+        <div class="image-placeholder">
+          <span class="placeholder-icon">&#128706;</span>
+          Bathroom
+          <span class="placeholder-text">images/apartment-04.jpg</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════
+       THE NEIGHBOURHOOD
+       ═══════════════════════════════════════════════ -->
+
+  <section id="neighbourhood">
+    <div class="container">
+      <h2>The Neighbourhood</h2>
+      <hr class="divider">
+
+      <p><strong>Cedofeita</strong> is where Porto residents actually live — and one of the most sought-after parishes in the city.</p>
+
+      <p>Rua do Breiner sits in the bohemian quarter, steps from Rua Miguel Bombarda and its galleries, surrounded by independent cafes, local restaurants, and neighbourhood shops. It's central enough to walk everywhere, yet quiet enough to sleep with the windows open.</p>
+
+      <p>This isn't a tourist zone. This is a real neighbourhood with real community — and a growing number of international residents who chose it for exactly that reason.</p>
+
+      <h3>Walking Distances</h3>
+
+      <table class="walking-table">
+        <tr><td>Rua Miguel Bombarda (art galleries)</td><td>5 min</td></tr>
+        <tr><td>Metro (Lapa / Carolina Michaelis)</td><td>5-8 min</td></tr>
+        <tr><td>Cedofeita high street &amp; Sa da Bandeira</td><td>5 min</td></tr>
+        <tr><td>Torre dos Clerigos</td><td>10 min</td></tr>
+        <tr><td>Jardim do Palacio de Cristal</td><td>10 min</td></tr>
+        <tr><td>Praca dos Aliados (city centre)</td><td>10 min</td></tr>
+        <tr><td>Mercado do Bolhao</td><td>12 min</td></tr>
+        <tr><td>Ribeira &amp; Douro River</td><td>15 min</td></tr>
+        <tr><td>Porto Airport (by metro)</td><td>~35 min</td></tr>
+      </table>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════
+       WHY THIS APARTMENT
+       ═══════════════════════════════════════════════ -->
+
+  <section id="why" class="alt">
+    <div class="container">
+      <h2>Why This Apartment</h2>
+      <hr class="divider">
+
+      <p>If you're looking for a city apartment in Porto, you'll find hundreds of options on portals and with agents. Most are well-renovated T2s with a balcony or a small terrace.</p>
+
+      <p><strong>This one is different.</strong></p>
+
+      <ul class="diff-list">
+        <li>A <strong>private garden</strong> with a lemon tree, grapevine, flowers, and a hammock — in the middle of Cedofeita</li>
+        <li>A building that was <strong>rebuilt in 2025</strong> — new infrastructure with original character preserved</li>
+        <li>An <strong>independent building</strong> with no condominium fees, no shared management, no politics</li>
+        <li>A <strong>vintage-character interior</strong> with modern kitchen and open-plan living — bright, warm, and ready to live in</li>
+        <li>One of Porto's <strong>best residential neighbourhoods</strong> — walkable, authentic, and alive</li>
+      </ul>
+
+      <blockquote>Gardens like this don't come up in downtown Porto. When they do, they don't last long.</blockquote>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════
+       THE DETAILS
+       ═══════════════════════════════════════════════ -->
+
+  <section id="details">
+    <div class="container">
+      <h2>The Details</h2>
+      <hr class="divider">
+
+      <table class="specs-table">
+        <tr><td>Address</td><td>Rua do Breiner 354, 1st Floor, Porto</td></tr>
+        <tr><td>Parish</td><td>Cedofeita</td></tr>
+        <tr><td>Type</td><td>T2 (2 bedrooms, 1 bathroom)</td></tr>
+        <tr><td>Interior</td><td>~80-100 m2</td></tr>
+        <tr><td>Garden</td><td>~40-60 m2</td></tr>
+        <tr><td>Building</td><td>Pre-1951, rebuilt 2025</td></tr>
+        <tr><td>Condominium</td><td>None</td></tr>
+        <tr><td>Parking</td><td>No (central location, metro nearby)</td></tr>
+        <tr><td>Elevator</td><td>No (1st floor)</td></tr>
+        <tr><td>Price</td><td>Available on request</td></tr>
+      </table>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════
+       PRIVATE SALE
+       ═══════════════════════════════════════════════ -->
+
+  <section id="private-sale" class="alt">
+    <div class="container">
+      <h2>Private Sale — No Agent, No Commission</h2>
+      <hr class="divider">
+
+      <p>This is a direct, private sale. There is no estate agent involved, which means:</p>
+
+      <ul class="sale-benefits">
+        <li><strong>No commission</strong> built into the price — for either side</li>
+        <li><strong>Direct communication</strong> with the owner throughout the process</li>
+        <li><strong>Transparent and straightforward</strong> — you deal with real people, not a sales funnel</li>
+        <li>A qualified <strong>English-speaking solicitor</strong> is available to handle all legal documentation (CPCV and Escritura)</li>
+      </ul>
+
+      <p class="mt-2">Both buyer and seller can engage their own independent solicitor for full legal protection.</p>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════
+       CONTACT
+       ═══════════════════════════════════════════════ -->
+
+  <section class="contact-section" id="contact">
+    <h2>Interested?</h2>
+    <hr class="divider">
+
+    <p>If this sounds like what you've been looking for — or if you'd like to see it in person — get in touch directly:</p>
+
+    <p class="contact-name">Sergio Pavanello Rossi</p>
+    <p class="contact-email"><a href="mailto:sprossi@gmail.com">sprossi@gmail.com</a></p>
+
+    <p class="contact-note">Happy to share more photos, a video walkthrough, or arrange a viewing at a time that works for you.</p>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════
+       FOOTER
+       ═══════════════════════════════════════════════ -->
+
+  <footer>
+    <p>Private sale &middot; Rua do Breiner 354, Cedofeita, Porto</p>
+  </footer>
+
+</body>
+</html>
