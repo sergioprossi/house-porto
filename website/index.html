@@ -412,6 +412,80 @@
       color: rgba(255,255,255,0.6);
     }
 
+    /* ── Contact Form ── */
+    .contact-form {
+      max-width: 480px;
+      margin: 2rem auto 0 auto;
+      text-align: left;
+    }
+
+    .contact-form label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 0.4rem;
+      letter-spacing: 0.03em;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      margin-bottom: 1.25rem;
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 6px;
+      background: rgba(255,255,255,0.1);
+      color: #fff;
+      font-family: inherit;
+      font-size: 1rem;
+      line-height: 1.5;
+      transition: border-color 0.2s, background 0.2s;
+    }
+
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder {
+      color: rgba(255,255,255,0.35);
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      outline: none;
+      border-color: #c4704b;
+      background: rgba(255,255,255,0.15);
+    }
+
+    .contact-form textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .contact-form button {
+      display: inline-block;
+      width: 100%;
+      padding: 0.85rem 2rem;
+      background: #c4704b;
+      color: #fff;
+      font-family: inherit;
+      font-size: 1rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.2s;
+      letter-spacing: 0.02em;
+    }
+
+    .contact-form button:hover {
+      background: #b5603d;
+    }
+
+    .contact-or {
+      color: rgba(255,255,255,0.4);
+      font-size: 0.85rem;
+      margin: 1.5rem 0;
+    }
+
     /* ── Footer ── */
     footer {
       background: #2e3d24;
@@ -682,6 +756,27 @@
     <hr class="divider">
 
     <p>If this sounds like what you've been looking for — or if you'd like to see it in person — get in touch directly:</p>
+
+    <form class="contact-form" action="https://formsubmit.co/sprossi@gmail.com" method="POST">
+      <!-- Formsubmit.co configuration -->
+      <input type="hidden" name="_subject" value="House Porto — New Enquiry">
+      <input type="hidden" name="_next" value="https://sergioprossi.github.io/house-porto/">
+      <input type="hidden" name="_captcha" value="true">
+      <input type="text" name="_honey" style="display:none">
+
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" placeholder="Your name" required>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="Your email" required>
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" placeholder="I'd like to know more about the apartment..."></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+
+    <p class="contact-or">or email directly</p>
 
     <p class="contact-name">Sergio Pavanello Rossi</p>
     <p class="contact-email"><a href="mailto:sprossi@gmail.com">sprossi@gmail.com</a></p>
